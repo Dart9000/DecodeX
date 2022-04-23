@@ -23,6 +23,11 @@
 - Deployment: **Heroku**
 - ML Models: **Python**
 ---
+## Link
+- Github : https://github.com/Dart9000/DecodeX
+- Deployment : https://decode-x.herokuapp.com/
+- Video : soon...
+--- 
 ## TRY-IT-OUT:
 [Decode-X](https://decode-x.herokuapp.com/)
 ---
