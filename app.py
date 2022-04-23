@@ -17,6 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def home():
     return render_template('home.html')
 
+
 @app.route('/', methods=['POST', 'GET'])
 def get_data():
         if request.method == 'POST':
@@ -42,7 +43,30 @@ def get_data():
                     return redirect(url_for('legal', name='Processing'))
                 else:
                     return redirect(url_for('summary', name='Processing'))
-                
+
+
+@app.route('/summary/<name>')
+def summary(name):
+    s2=os.path.join(app.config['UPLOAD_FOLDER'], 'name.txt')
+    with open(s2,'r') as f:
+        name=f.read()     
+    summary = Format(generate_summary(name))
+
+    #return htmlsummary
+    return render_template('summary.html',summary=summary,name=name)
+
+
+@app.route('/legal/<name>')
+def legal(name):
+    s2=os.path.join(app.config['UPLOAD_FOLDER'], 'name.txt')
+    with open(s2,'r') as f:
+        name=f.read()
+    summary= generate_summary(name)
+    legal= generate_legal(summary)
+    per=(len(legal)/len(summary))*100
+    summary=Format(summary)
+    legal=Format(legal)
+    return render_template('legal.html',legal=legal, summary=summary, name=name, per=per)                
 
 
 if __name__ == '__main__' :
