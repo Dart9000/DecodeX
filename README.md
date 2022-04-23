@@ -24,7 +24,7 @@
 - ML Models: **Python**
 ---
 ## TRY-IT-OUT:
-[Decode-X]()
+[Decode-X](https://decode-x.herokuapp.com/)
 ---
 ## PROJECTED STRUCTURE:
-![Structure]()
+![Structure](asset/Flowchart.jpg)
