@@ -1,4 +1,4 @@
-# DECODE-X 
+# DECODE-X
 
 ---
 ## PROBLEM STATEMENT
